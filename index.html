@@ -204,7 +204,7 @@ https://templatemo.com/tm-562-space-dynamic
       <div class="row">
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="section-heading">
-            <h2>Check Out What Is <em>Trending</em> In Our Latest <span>News</span></h2>
+            <h2>Nos acompanha nas <em>REDES SOCIAIS</em> e veja nossas <span>NOTÍCIAS</span></h2>
           </div>
         </div>
       </div>
@@ -254,7 +254,7 @@ https://templatemo.com/tm-562-space-dynamic
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <button type="submit" id="form-submit" class="main-button ">Send Message</button>
+                  <button type="submit" id="form-submit" class="main-button">Envie sua mensagem</button>
                 </fieldset>
               </div>
             </div>
@@ -286,6 +286,23 @@ https://templatemo.com/tm-562-space-dynamic
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/templatemo-custom.js"></script>
+  <script>
+    document.getElementById('contact').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const surname = document.getElementById('surname').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const whatsappNumber = '5519989461422';
+      const textMessage = `Boa tarde, tudo bem? Meu nome é ${name} ${surname}, meu email é ${email}. ${message}.`;
+      const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(textMessage)}`;
+      event.target.reset();
+      window.open(whatsappLink, '_blank');
+
+    });
+  </script>
 
 </body>
 
